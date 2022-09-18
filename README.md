@@ -72,5 +72,5 @@ def lambda_handler(event, context):
 13. Click "Add" to create the trigger
 14. This should create an HTTP API endpoint. Under "Configuration", choose "Triggers" and copy the API endpoint URL.
 15. Open a new tab in your browser, paste the URL and hit Enter
-16. This should show you the created webpage hosted serverlessly in AWS Lambda
+16. This should show you the created webpage hosted serverlessly in AWS Lambda  
 Congrats! You have now created a serverless website. Next, we will look at how to use your custom domain name instead of random API Gateway URL. 
