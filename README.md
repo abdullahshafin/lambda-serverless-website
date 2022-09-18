@@ -121,7 +121,22 @@ Congrats! You have now created a serverless website. Next, we will look at how t
 36. Open a new tab, enter URL "dnschecker.org" and hit enter
 37. Paste your domain name, keep record type as A and hit "Search". This should show you a lot of green check marks.  
     Note: this means that DNS is indeed setup correctly. 
-38. Finally, enter your domain name in a browser and hit enter. This should show you the same webpage as you saw in Section 2) step 15. This means that everything worked correctly and your domain name points to AWS Lambda to host the website serverlessly with custom domain name.  
+38. Finally, enter your domain name in a browser and hit enter. This should show you the same webpage as you saw in Topic 2) step 15. This means that everything worked correctly and your domain name points to AWS Lambda to host the website serverlessly with custom domain name.  
     Note: It may take a few hours before the final step works. Therefore, be patient and come back after a couple of hours if it doesn't work right away.
 
 Resources: https://www.youtube.com/watch?v=ESei6XQ7dMg
+
+If you are unable to access your domain using domain-name.com, then you need to read on and follow the steps below:  
+39. Open "API Gateway" from AWS services  
+40. Click on the your API in the "Name" column  
+41. Click on "Routes" from left side panel under "Develop"  
+42. Click on "Create" to create a new route  
+43. Click on "ANY" for method and type in "/" as route  
+44. Hit "Create"  
+45. Now choose the newly created route by clicking on "ANY" for route "/"  
+46. Click on "Attach integration"  
+47. To choose existing integration, click on drop-down and select lambda name you chose in Topic 2) step 3 e.g. harqat-homepage  
+48. Click on "Attach integration" button  
+49. You might have 2 routes now. Delete the other route e.g. "/harqat-homepage"  
+50. Repeat step 38) and you should see your website directly by entering your domain name in browser  
+
