@@ -63,7 +63,7 @@ def lambda_handler(event, context):
     
     return response
 ```
-7. Hit "Deploy" to deplot the code to the Lambda function
+7. Hit "Deploy" to deploy the code to the Lambda function
 8. Next, we will add a trigger to invoke this Lambda function. For that, click on "Add trigger" under "Function overview"
 9. In "Select a source", choose "API Gateway"
 10. Click on "Create a new API"
@@ -140,3 +140,67 @@ If you are unable to access your domain using domain-name.com, then you need to 
 49. You might have 2 routes now. Delete the other route e.g. "/harqat-homepage"  
 50. Repeat step 38) and you should see your website directly by entering your domain name in browser  
 
+# Topic 4) How to add other pages to your website
+You may realize that clicking on "Blog" button on your website leads to an error. In order to add a blog page also in a serverless manner, we can create another Lambda function. In order to do that, follow the steps below:
+1. Open "Lambda" from AWS services
+2. Click on "Create function"
+3. Give it a name under "Function name" e.g. harqat-blog
+4. Select "Python 3.9" under "Runtime"
+5. Click "Create function" button
+6. In lambda_function.py, replace the code with the following:
+``` python
+import json
+
+    
+def lambda_handler(event, context):
+    body = '''
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Blog</title>
+    </head>
+    <body>
+        <h1>Blog</h1>
+        <p>Welcome to my blog</p>
+        <button> <a href="/">Home</a></button>
+    </body>
+    </html>'''
+    
+    response = {
+        'statusCode': 200,
+        'headers': {"Content-Type": "text/html",},
+        'body': body
+    }
+    
+    return response
+```
+7. Hit "Deploy" to deploy the code to the Lambda function
+8. Next, we will add a trigger to invoke this Lambda function. For that, click on "Add trigger" under "Function overview"
+9. In "Select a source", choose "API Gateway"
+10. Click on "Use existing API"
+11. Under Existing API, click on the text field and select the HTTP API you previously created e.g. harqat-homepage-API
+12. In "Deployment stage", select "default"
+13. Under Security, choose "Open"
+14. Click "Add" to create the trigger
+15. This should create an HTTP API endpoint. Under "Configuration", choose "Triggers" and copy the API endpoint URL.
+16. Open a new tab in your browser, paste the URL and hit Enter
+17. This should show you the created webpage hosted serverlessly in AWS Lambda  
+18. Now, we want to connect this to our homepage. For this, open "API Gateway" from list of AWS services
+19. Locate your API e.g. harqat-homepage-API and click on it
+20. On the left side panel, under "Develop", click on "Routes"
+21. Click on "ANY" under the newly added route e.g. /harqat-blog 
+22. Click on "Edit"
+23. Change the route to "/blog" from its orignal value e.g. from /harqat-blog to /blog
+24. Hit "Save"
+25. Navigate to "Routes" under "Develop" and click on "ANY" under "/blog"
+26. In Route details, click on "Configure" under Integration
+27. Click on "Edit" in "Integration details"
+28. Keep everything as default and hit "Save"
+29. Head back to the lambda function created in step 5 and click on "Configuration"
+30. In "Triggers", you will see 2 triggers now. Delete the one that's now outdated due to the new route
+31. Enter your domain name in a new browser tab and hit enter
+32. Now when you click on "Blog" button, it should lead you to the webpage you created for blog
+33. When you hit "Home" button, it should bring you back to your homepage  
+
+Congrats! You have now created a serverless website with 2 pages using a custom domain name. You can continue to add as many pages as you like and have a website that is fully serverless. 
