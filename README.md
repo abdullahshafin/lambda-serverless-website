@@ -123,3 +123,5 @@ Congrats! You have now created a serverless website. Next, we will look at how t
     Note: this means that DNS is indeed setup correctly. 
 38. Finally, enter your domain name in a browser and hit enter. This should show you the same webpage as you saw in Section 2) step 15. This means that everything worked correctly and your domain name points to AWS Lambda to host the website serverlessly with custom domain name.  
     Note: It may take a few hours before the final step works. Therefore, be patient and come back after a couple of hours if it doesn't work right away.
+
+Resources: https://www.youtube.com/watch?v=ESei6XQ7dMg
