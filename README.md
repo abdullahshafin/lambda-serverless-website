@@ -204,3 +204,20 @@ def lambda_handler(event, context):
 33. When you hit "Home" button, it should bring you back to your homepage  
 
 Congrats! You have now created a serverless website with 2 pages using a custom domain name. You can continue to add as many pages as you like and have a website that is fully serverless. 
+
+### Additional Resources:
+1. Serverless file upload using AWS Lambda to AWS S3  
+https://www.youtube.com/watch?v=UUl84sjLRZw  
+https://github.com/srcecde/aws-tutorial-code/blob/master/lambda/lambda_api_multipart.py  
+2. Public read access to AWS S3  
+https://aws.amazon.com/premiumsupport/knowledge-center/read-access-objects-s3-bucket/  
+3. How to connect GoDaddy domain name with AWS Route 53  
+https://www.youtube.com/watch?v=hRSj2n-XKGM  
+4. Host a Website on AWS with a Custom Domain and HTTPS | S3, Route 53, CloudFront, Certificate Manager  
+https://www.youtube.com/watch?v=kvlSep7m7Uk  
+5. How to Make a Serverless Website with AWS Lambda (for free)  
+https://www.youtube.com/watch?v=MoupNut6HMM  
+6. Redirect non-www requests to www on Amazon Route 53  
+https://stackoverflow.com/questions/12176969/how-to-forward-http-request-to-https-in-amazon-route53  
+https://serverfault.com/questions/947954/aws-route53-lambda-redirecting-naked-http-requests-to-https-www-for-a-serverl  
+https://serverfault.com/questions/576461/redirect-non-www-requests-to-www-on-amazon-route-53  
